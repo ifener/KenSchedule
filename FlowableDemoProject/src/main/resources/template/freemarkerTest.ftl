@@ -1,0 +1,14 @@
+<table>
+	<tr>
+		<td>用户名：</td>
+		<td>${user.username}</td>
+	</tr>
+	<tr>
+		<td>所的城市：</td>
+		<td>${user.city}</td>
+	</tr>
+	<tr>
+		<td>所的省份：</td>
+		<td>${user.province}</td>
+	</tr>
+</table>
