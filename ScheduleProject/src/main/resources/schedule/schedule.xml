@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kenschedule>
+	<schedulers>
+		<scheduler>
+			<name>SyncTaskControlThread</name>
+			<type>com.wey.schedule.thread.task.SyncTaskControlThread</type>
+			<period>60</period>
+			<offset>3</offset>
+			<suspend>true</suspend>
+			<contactMail>hejianke@yulong.com</contactMail>
+			<desc>存储过程线程调度管理</desc>
+		</scheduler>
+		<scheduler>
+			<name>SyncInventorysThread</name>
+			<type>
+				com.wey.schedule.thread.task.SyncInventorysThread
+			</type>
+			<period>60</period>
+			<offset>10</offset>
+			<suspend>true</suspend>
+			<desc>出库任务单同步MES线程(返厂和换机单线程)</desc>
+		</scheduler>
+		<scheduler>
+			<name>SyncReciveOrderReTurnThread</name>
+			<type>
+				com.wey.schedule.thread.task.SyncReciveOrderReTurnThread
+			</type>
+			<period>60</period>
+			<offset>10</offset>
+			<suspend>true</suspend>
+			<desc>到货单返写线程 </desc>
+		</scheduler>
+	</schedulers>
+</kenschedule>
