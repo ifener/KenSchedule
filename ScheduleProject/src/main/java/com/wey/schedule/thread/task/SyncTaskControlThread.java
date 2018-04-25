@@ -11,7 +11,7 @@ public class SyncTaskControlThread extends BaseSchedulerThread {
     
     @Override
     protected void doWakeUp() throws Exception {
-        for (int i = 0; i < 1000000000; i++) {
+        for (int i = 0; i < 100000; i++) {
             logger.info("SyncTaskControlThread " + i);
         }
         

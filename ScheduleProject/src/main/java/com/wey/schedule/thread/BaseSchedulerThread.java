@@ -106,24 +106,26 @@ public abstract class BaseSchedulerThread extends Thread {
                     }
                     
                 }
-                this.bWakeupOnce = false;
-                try {
-                    if (this.bSchedule) {
-                        long t = (System.currentTimeMillis() - this.timeoffset) % this.timeslice;
-                        long sleep = this.timeslice - t + 100L;
-                        sleep(sleep);
-                    }
-                    else {
-                        sleep(4294967295L);
-                    }
-                    
-                }
-                catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                System.out.println(getClass().getName() + "wake up - " + new Date());
+                
             }
+            
+            this.bWakeupOnce = false;
+            try {
+                if (this.bSchedule) {
+                    long t = (System.currentTimeMillis() - this.timeoffset) % this.timeslice;
+                    long sleep = this.timeslice - t + 100L;
+                    sleep(sleep);
+                }
+                else {
+                    sleep(4294967295L);
+                }
+                
+            }
+            catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            System.out.println(getClass().getName() + "wake up - " + new Date());
         }
         System.out.println("exit - current thread - " + Thread.currentThread());
     }
