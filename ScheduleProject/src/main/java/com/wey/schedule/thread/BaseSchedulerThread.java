@@ -2,6 +2,8 @@ package com.wey.schedule.thread;
 
 import java.util.Date;
 
+import com.wey.schedule.util.StringUtil;
+
 public abstract class BaseSchedulerThread extends Thread {
     
     private Object semaphore = null;
@@ -10,6 +12,8 @@ public abstract class BaseSchedulerThread extends Thread {
     private String contactMail = "";
     private String dbLog = "Y";
     private String param = null;
+    private String lastStartTime = "";
+    private String lastEndTime = "";
     private volatile boolean bSchedule = false;
     private volatile boolean needStop = false;
     private volatile boolean bWakeupOnce = false;
@@ -98,13 +102,14 @@ public abstract class BaseSchedulerThread extends Thread {
             if ((this.bSchedule) || (this.bWakeupOnce)) {
                 synchronized (this.semaphore) {
                     interrupted();
+                    this.lastStartTime = StringUtil.getDateWithFormat("yyyy-MM-dd HH:mm:ss.SSS");
                     try {
                         doWakeUp();
                     }
                     catch (Exception e) {
                         e.printStackTrace();
                     }
-                    
+                    this.lastEndTime = StringUtil.getDateWithFormat("yyyy-MM-dd HH:mm:ss.SSS");
                 }
                 
             }
@@ -186,6 +191,22 @@ public abstract class BaseSchedulerThread extends Thread {
     
     public void setNeedStop(boolean needStop) {
         this.needStop = needStop;
+    }
+    
+    public String getLastStartTime() {
+        return lastStartTime;
+    }
+    
+    public void setLastStartTime(String lastStartTime) {
+        this.lastStartTime = lastStartTime;
+    }
+    
+    public String getLastEndTime() {
+        return lastEndTime;
+    }
+    
+    public void setLastEndTime(String lastEndTime) {
+        this.lastEndTime = lastEndTime;
     }
     
 }

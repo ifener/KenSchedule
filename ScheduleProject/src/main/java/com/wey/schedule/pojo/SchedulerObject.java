@@ -58,7 +58,7 @@ public class SchedulerObject implements Serializable {
     }
     
     public String getLastStartTime() {
-        return lastStartTime;
+        return this.thread.getLastStartTime();
     }
     
     public void setLastStartTime(String lastStartTime) {
@@ -66,7 +66,7 @@ public class SchedulerObject implements Serializable {
     }
     
     public String getLastEndTime() {
-        return lastEndTime;
+        return this.thread.getLastEndTime();
     }
     
     public void setLastEndTime(String lastEndTime) {
@@ -106,7 +106,7 @@ public class SchedulerObject implements Serializable {
     }
     
     public String getStatus() {
-        logger.debug(this.thread.getState().toString());
+        logger.info(this.thread.getState().toString());
         if (this.thread.getState().equals(Thread.State.RUNNABLE)) {
             this.status = "运行中";
         }
