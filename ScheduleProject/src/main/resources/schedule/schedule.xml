@@ -30,5 +30,15 @@
 			<suspend>true</suspend>
 			<desc>到货单返写线程 </desc>
 		</scheduler>
+		<scheduler>
+			<name>MutiTaskThread</name>
+			<type>
+				com.wey.schedule.thread.task.MutiTaskThread
+			</type>
+			<period>10</period>
+			<offset>0</offset>
+			<suspend>true</suspend>
+			<desc>多任务线程管理</desc>
+		</scheduler>
 	</schedulers>
 </kenschedule>

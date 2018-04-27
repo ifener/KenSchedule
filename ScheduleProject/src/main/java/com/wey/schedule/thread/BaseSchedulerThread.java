@@ -130,7 +130,7 @@ public abstract class BaseSchedulerThread extends Thread {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-            System.out.println(getClass().getName() + "wake up - " + new Date());
+            System.out.println(getClass().getName() + " wake up - " + new Date());
         }
         System.out.println("exit - current thread - " + Thread.currentThread());
     }
