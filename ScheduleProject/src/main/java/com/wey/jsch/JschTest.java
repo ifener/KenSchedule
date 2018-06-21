@@ -26,7 +26,7 @@ public class JschTest {
             session.setConfig(config); // 为Session对象设置properties
             session.setTimeout(3000000); // 设置timeout时间
             session.connect(); // 通过Session建立链接
-            channel = session.openChannel("sftp"); // 打开FTP通道
+            channel = session.openChannel("sftp"); // 打开FTP通道..
             
             channel.connect(); // 建立SFTP通道的连接
             
