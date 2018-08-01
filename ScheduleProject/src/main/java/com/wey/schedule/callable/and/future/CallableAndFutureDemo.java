@@ -10,6 +10,7 @@ import java.util.concurrent.Future;
 public class CallableAndFutureDemo {
     
     public static void main(String[] args) {
+        
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Future<Integer> future = executorService.submit(new Callable<Integer>() {
             
@@ -31,6 +32,7 @@ public class CallableAndFutureDemo {
         finally {
             executorService.shutdown();
         }
+        
     }
     
 }
